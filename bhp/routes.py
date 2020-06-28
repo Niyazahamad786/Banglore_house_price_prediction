@@ -5,7 +5,7 @@ import json
 import pickle
 import numpy as np
 
-@app.route('/predict',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict():
     form=MainForm()
     cost=0
