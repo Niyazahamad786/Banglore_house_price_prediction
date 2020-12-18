@@ -13,16 +13,13 @@ def predict():
         Total_sqft=float(form.Total_sqft.data)
         Bedroom=int(form.Bedroom.data)
         Bath=float(form.Bath.data)
-        Balcony=int(form.Balcony.data)
         Area=form.Area.data.lower()
         data_column=None
-        location=None
         model=None
-        with open("bhp/columns.json", "r") as readit: 
-            data_column = json.load(readit)['data_column']
-        location=data_column[4:]
+        with open("Model/columns.json", "r") as readit: 
+            data_column = json.load(readit)['data_columns']
         if model is None:
-            with open('banglore_home_prices_model.pickle','rb') as f:
+            with open('Model/banglore_home_prices_model.pickle','rb') as f:
                 model=pickle.load(f)
         try:
             loc_index = data_column.index(Area.lower())
@@ -31,9 +28,8 @@ def predict():
 
         x = np.zeros(len(data_column))
         x[0] = Total_sqft
-        x[3] = Bedroom
-        x[2] = Balcony
         x[1] = Bath
+        x[2] = Bedroom
         if loc_index>=0:
             x[loc_index] = 1
 

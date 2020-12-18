@@ -53,7 +53,7 @@
         <form action="" method="POST">
             {{form.hidden_tag()}}
             <div class='text-center'>
-                <h1 style="display:inline;">Cost:</h1> <h2 style="display:inline;">{{cost }} </h2> <sub> In Lakhs</sub>
+                <h1 style="display:inline;">Cost:</h1> <h2 style="display:inline;">{{cost }} </h2> <sub>(In Lakhs)</sub>
             </div>
             <br>
             <div>
@@ -105,21 +105,7 @@
 
                 {% endif %}
             </div>
-            <div class="form-group">
-                {{ form.Balcony.label(class="form-control-label")}}
-                {% if form.Balcony.errors %}
-                {{ form.Balcony(class="form-control form-control-llg is-invalid")}}
-                <div class="invalid-feedback">
-                    {% for error in form.Balcony.errors %}
-                    <span>{{error}}</span>
-                    {% endfor %}
-
-                </div>
-                {% else %}
-                {{ form.Balcony(class="form-control form-control-lg ")}}
-
-                {% endif %}
-            </div>
+            
             <div class="form-group">
                 {{ form.Area.label(class="form-control-label")}}
                 {% if form.Area.errors %}

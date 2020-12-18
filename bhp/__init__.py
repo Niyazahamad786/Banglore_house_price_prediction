@@ -1,5 +1,5 @@
 from flask import Flask
 app = Flask(__name__)
-app.config['SECRET_KEY']='heelo therer'
+app.config['SECRET_KEY']='heelo there'
 
 from bhp  import routes
