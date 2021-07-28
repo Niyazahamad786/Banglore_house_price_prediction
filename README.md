@@ -14,10 +14,10 @@ pip install -r requirements.txt
 ```
 To run the project in local host
 ```
-python manage.py runserver
+python app.py
 Open a browser to http://127.0.0.1:8000/
 ```
-The application is deployed in Heroku
+The application is deployed on Heroku platform.
 ```
-https://django-blog6.herokuapp.com
+https://banglore-house-prediction4.herokuapp.com/
 ```
